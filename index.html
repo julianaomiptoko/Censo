@@ -512,14 +512,14 @@ async function buscarCNPJ() {
     document.getElementById('result-natureza').textContent = d.descricao_natureza_juridica || '-';
 
     var tfParams = new URLSearchParams({
-      empresa_nome:           d.razao_social || '',
-      empresa_cnpj:           formatarCNPJ(raw),
-      empresa_cnae_codigo:    String(d.cnae_fiscal || ''),
-      empresa_cnae_descricao: d.cnae_fiscal_descricao || '',
-      empresa_municipio:      capitalize(d.municipio || ''),
-      empresa_estado:         d.uf || '',
-      empresa_natureza:       d.descricao_natureza_juridica || '',
-      empresa_associada:      assoc.nome || token,
+      'input19':  d.razao_social || '',
+      'input20':  formatarCNPJ(raw),
+      'input21':  String(d.cnae_fiscal || ''),
+      'input22':  d.cnae_fiscal_descricao || '',
+      'input23':  capitalize(d.municipio || ''),
+      'input24':  d.uf || '',
+      'input25':  d.descricao_natureza_juridica || '',
+      'input18':  assoc.nome || token,
     });
 
     document.getElementById('btn-confirmar').href = TYPEFORM_BASE_URL + '?' + tfParams.toString();
